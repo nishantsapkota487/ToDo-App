@@ -1,0 +1,19 @@
+body{
+  background-color: #f0f261;
+}
+
+.header{
+  color: #e6671e;
+  position: relative;
+  left: 220px;
+  top: 50px;
+}
+
+#label{
+  color: #e6671e;
+}
+
+#exampleInputEmail1{
+  position: relative;
+  top: 30px;
+}

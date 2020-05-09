@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TODOAPP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class = 'header'> Welcome to Nishant's To Do List.</h1>
+      <form method = "POST">
+        <div class="form-group" style = "position: relative; top: 90px;">
+          <label for="exampleInputEmail1" style = "position: relative; left: 430px; font-size: 30px; color: '#f0f261'" id = 'label'>ADD TODO LIST</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ADD TASK HERE">
+        </div>
+  </body>
+</html>
