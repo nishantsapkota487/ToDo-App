@@ -1,5 +1,6 @@
 body{
   background-color: #f0f261;
+  overflow-x: hidden;
 }
 
 .header{
@@ -16,4 +17,18 @@ body{
 #exampleInputEmail1{
   position: relative;
   top: 30px;
+  height: 60px;
+
+}
+
+#card{
+  position: relative;
+  top: 50px;
+}
+
+.header2{
+  color: #e6671e;
+  position: relative;
+  left: 440px;
+  top: 120px;
 }
