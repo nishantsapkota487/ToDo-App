@@ -6,28 +6,31 @@
     <title>TODOAPP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
       <h1 class = 'header'> Welcome to Nishant's To Do List.</h1>
       <h2 class = 'header2' >Add Task</h2>
-      <form method = "POST">
+      <form method = "POST" action = "{% url 'add_task' %}"> {% csrf_token %}
         <div class="input-group mb-10" style = "position: relative; top: 200px;">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" style = "height: 50px;">
+          <input id = 'form' type="text" class="form-control" placeholder="Add your task here" aria-label="Recipient's username" aria-describedby="basic-addon2" name = "task" style = "height: 50px;">
           <div class="input-group-append">
-            <button class="btn btn-success" type="button">Add Task</button>
+            <button class="btn btn-success" type="submit" href = "" id = "add">Add Task</button>
           </div>
         </div>
+        </form>
         {% for task in tasks %}
         <div class="card" style = "position: relative; top: 300px; height: 80px; margin-bottom: 30px;">
           <div class="card-body">
             <em>{{ task }}</em>
-            <input type="Submit" name="" value="Done" class = 'btn btn-success' style = "position: absolute;left: 950px;">
-            <input type="Submit" name="" value="Delete" class = 'btn btn-danger' style = "position: absolute;left: 1020px;">
+            <a href = "{% url 'delete_task' task.id %}" type="Submit" name="" value="Delete" class = 'btn btn-danger' style = "position: absolute;left: 1020px;" id = 'delete'>Delete</a>
           </div>
           <p></p>
         </div>
         {% endfor %}
         </div>
   </body>
+  <script src = "{% static 'script.js' %}">
+  </script>
 </html>
