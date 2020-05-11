@@ -21,9 +21,10 @@ def add_task(request):
     for i in tasks:
         already_in_db.append(i.task)
     if task not in already_in_db:
-        ToDoList.objects.create(
-        task = task
-        )
+        if task != "":
+            ToDoList.objects.create(
+            task = task
+            )
     tasks = ToDoList.objects.all()
     return render(request, 'homepage.html', {'tasks': tasks})
 
@@ -38,7 +39,6 @@ def check(request):
     tasks = ToDoList.objects.all()
     for i in tasks:
         if i.task == user_value:
-            print(i.task)
             return JsonResponse({
                 'message': 'Task already exists'
                 })
